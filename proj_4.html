@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>In Orbit Reprogramming for CubeSats</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/*======================================
+//--//-->   ABOUT
+======================================*/
+
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+
+
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+.img_deg_R
+{
+  float: right;
+  width: 25%;
+}
+
+.img_deg_L
+{
+  float: left;
+  width: 20%;
+}
+
+.box
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dream
+{
+  display: flex;
+  flex-direction: column;
+  width: 32.5%;
+}
+
+.dream img{
+  width: 100%;
+}
+
+@media only screen and (max-width: 769px){
+  .box{
+    flex-direction: column;
+  }
+  .dream{
+    width: 100%
+  }
+}
+
+
+</style>
+
+<head>
+    <!-- <div class="row"> -->
+        <h1 >In Orbit Reprogramming for CubeSats</h1>
+        <div class="underline"></div>
+    <!-- </div> -->
+    
+</head>
+
+<body>
+
+    <p>
+        After third year of engineering, I completed my internship which was on the topic of Operating Systems based Flight Software. My internship was accomplished at
+        SSPACE Lab, IIST in the summer's of 2023. I may discuss my internship work in some other project. This article is mainly to convey the 
+        readers how my thought process was changed after my internship. 
+    </p>
+
+    <p>
+        Once my internship was done, I very well got used to working with the On Board Computer developed at SSPACE Lab. The SOC placed 
+        over it called as Microsemi Smartfusion2 was very useful and fascinating to me. It was a space grade SOC which ISRO also uses
+        in many of their applications. One unique thing which it is capable of is to program it using several different methods. A basic type 
+        of programming the SOC was to plug in the JTAG connector and program the board. Some other types include In-House Programming, 
+        In-System Programming and In-Application Programming. I was always interested to know how NASA was able to change the codes on 
+        Voyager, fix it and then allow the spacecraft to again communicate with us. So using the various types of programming mentioned above 
+        I decided to implement something similar to Voyager the Future CubeSats which we are building.
+    </p>
+
+    <p>
+        So from here on I started scrolling many documents and user guides available at the Microsemi website and tried to implement In Application 
+        Programming on our On Board Computer. Now to do this, first task was to upload the program into the external Flash present on the 
+        On Board Computer. The simplest and fastest method was to do it using the Ethernet connection provided by the SOC. I tried it 
+        using a starter kit which contains the same SOC on it. It was seventh semester wherein we had only two main courses and other 
+        courses were electives. Due to this, we were getting many free classes in between the lectures. Everytime when it was free hour 
+        for me, I used to walk into SSPACE lab and start working on this task. I was able to connect the starter kit with the Host PC and 
+        the ping message was getting replied by the starter kit. But the major problem was with the UDP connection which was used to transfer 
+        the flight software images from host PC to the external Flash. In that semester I mostly wasted my time to run the Ethernet 
+        of the starter kit for transfering the images using the UDP protocol. Along with this I was also testing the fuel gauge drivers 
+        built by my senior. It was cool experience reading the battery state charge, its open source voltage, charging the battery and 
+        discharging it.
+    </p>
+
+    <p>
+        Once the semester was over, it was time to start Final Year Project for my bachelor's thesis. During the vacation, I was still 
+        thinking of the UDP connection problem. But then I realised that the On Board Computer does not have Ethernet routed onto any 
+        of the connectors placed on it. So there was only one option to transfer the image from host PC to external Flash. It was using 
+        the UART line available on the PC-104 connector. This UART line is used to debug the softwares. So I decided to use this 
+        UART line to transfer the images from host PC to the external Flash on OBC. For this we also required the drivers of the NAND Flash.
+        This drivers were already desgined, tested and implemented by me during last phase of my internship project. So now I only had to
+        write a software which will properly read the image file from the host PC and transfer it to the NAND flash on the OBC. This step 
+        was accomplished by me during my final year project.
+    </p>
+
+    <div class="box">
+        
+        <div class="dream">
+            <video width="800px" 
+                    height="400px" 
+                    autoplay muted loop>
+                <source src="images/Proj_4_Images/IMG_Upload_2.mp4"
+                        type="video/mp4" />
+            </video>
+        </div>
+        
+      </div>
+
+    <p>
+        Once the flash was loaded with the redundant flight software images, we had to authenticate the images. If the images have been generated 
+        using the same versions of the software and for the same package die, it would pass the authentication step and will inidicate 
+        that the image loaded onto the Flash is now ready to program the SOC. In the first few tries the authentication was failing.
+        I again started going through the documentation for figuring out the reason of this authentication failure. The problem was in 
+        loading the image in the flash. When the loading of the image onto the flash was done properly, the authentication step was also cleared. 
+        And now the image loaded onto the flash is ready to be used for reprogramming the SOC. The video above shows the process of
+        uploading the images from host pc to the flash on the OBC.
+    </p>
+
+    <div class="box">
+        <div class="dream">
+          <img  src="images/Proj_4_Images/Repro_1.jpg">
+        </div>
+        <div class="dream">
+          <img class="img_deg_R" src="images/Proj_4_Images/Repro_2.jpg">
+        </div>
+        <div class="dream">
+          <img  src="images/Proj_4_Images/Repro_3.jpg">
+        </div>
+    </div>
+
+    <p>
+        On trying to reprogrammed the OBC, we were doing it on debugging mode hoping that on Production mode too it would work correctly.
+        But this did not happened and we did faced many issues in the production mode. This would be clearly discussed in the next project.
+        On debugging mode though the reprogramming was successfully implemented. We also tried changing the clock rate of the SOC, and the 
+        current consumption of the OBC was clearly noticed. This was the beginning of the very big milestone which we were about to set.
+        Soon when I told this success to PD sir, he asked me to add this functionality in the upcoming payload mission which was called 
+        as PiLOT_G2 later renamed as GRACE. By doing so we were going to be the first Indian University to showcase the In Orbit reprogramming 
+        capability. Along with this application, I also had some other improvements already accomplished on the PiLOT-1 software which we
+        decided to test on the PiLOT_G2 software. So now I had a major responsibility of integrating and interfacing all the hardware 
+        boards with the OBC and then finally write a working Flight Software for the mission while adding all the functionalities required.
+        This add on tasks and responsibility gave a impulse boost to the content of my Final Year project. Working for about 10 to 12 hours 
+        everyday, I was able to complete the software before leaving the campus. Ofcourse, there were many testings which had to be carried 
+        out on the Flight Hardware. Unfortunately, I could not do this as the hardware was not available. More will be discussed on this in the 
+        next project.
+    </p>
+
+    <p>
+        How does the future stands ahead of this pathbreaking functionality implementation on custom OBC?
+        In PiLOT_G2, we stored the images on the onboard flash. But in the future mission we will be directly uploading the images from the 
+        ground station to the Cubesat. During this, the Cubesat will stored the received images in the flash. And on commanding the 
+        reprogramming operation will be initiated.
+        How will this help to the developers and the Operation Engineers of a Cubesat missions?
+        Developers will be able to rectify any bugs which had already been running on the Flight software. In fact, the software engineers 
+        will be able to upload a complete different operation sequence software for the hardware on the CubeSat and will be able to change 
+        the functionality of the same CubeSat exponentially. Operation Engineers who are operating the CubeSats will be able to test many 
+        test cases for the proper functionality of the complete CubeSat.
+        Ultimately on adding this functionality to the software, the level of the flight softwares for all the future satellites and 
+        payloads has made a Quantum jump from what it was earlier.
+    </p>
+
+</body>
